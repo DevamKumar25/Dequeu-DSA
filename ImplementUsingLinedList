@@ -9,7 +9,7 @@ struct Node{
     int data;
     Node *prev,*next;
     static Node* getnode(int data){
-        Node* newNode = (Node*)malloc(sizeof(Node));
+        Node* newNode = new Node;
         newNode->data = data;
         newNode->prev = newNode->next = NULL;
         return newNode;
@@ -18,12 +18,13 @@ struct Node{
 
 
 class Deque{
+     public:
     Node* front;
     Node* rear;
     int size;
     
     
-    public:
+   
     Deque(){
         front=rear=NULL;
         size=0;
@@ -178,7 +179,7 @@ int main()
 
 	cout << "Front end element: " << dq.getFront() << endl;
 
-	cout << "Number of elements in Deque: " << dq.size()
+	cout << "Number of elements in Deque: " << dq.Size()
 		<< endl;
 cout<<"erase all the element : ";
 dq.erase();
@@ -189,6 +190,9 @@ cout<<"Delete all the element : ";
 
 	return 0;
 }
+
+
+
 
 
 
